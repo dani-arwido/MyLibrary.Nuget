@@ -32,7 +32,6 @@ stages:
           packagesToPack: '**/*.csproj'
           versioningScheme: 'off'
       - task: DotNetCoreCLI@2
-        displayName: Push
         inputs:
           command: 'push'
           packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
