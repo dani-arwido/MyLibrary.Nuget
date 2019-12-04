@@ -17,5 +17,3 @@ stages:
         inputs:
           command: 'restore'
           projects: '**/*.csproj'
-          feedsToUse: 'select'
-          arguments: '--configuration $(BuildConfiguration)'
