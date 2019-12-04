@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
 
-    <PackageId>MyLibraries.Nuget</PackageId>
+    <PackageId>MyLibraries2.Nuget</PackageId>
     <Version>1.0.2</Version>
     <Authors>Houssem Dellai</Authors>
     <Description>Test project for Nuget and CI/CD</Description>
