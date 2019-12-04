@@ -14,23 +14,27 @@ stages:
         BuildConfiguration: release
       steps:
       - task: DotNetCoreCLI@2
+        displayName: Restore
         inputs:
           command: 'restore'
           projects: '**/*.csproj'
           feedsToUse: 'select'
       - task: DotNetCoreCLI@2
+        displayName: Build
         inputs:
           command: 'build'
           projects: '**/*.csproj'
           arguments: '--configuration $(BuildConfiguration)'
-      - task: DotNetCoreCLI@2
-        inputs:
-          command: 'pack'
-          packagesToPack: '**/*.csproj'
-          versioningScheme: 'off'
-      - task: DotNetCoreCLI@2
-        inputs:
-          command: 'push'
-          packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-          nuGetFeedType: 'internal'
-          publishVstsFeed: '91283621-b431-4911-9808-ad6d469d1517/ee3b3c1e-4194-4d08-8f25-0a422e86d573'
+      # - task: DotNetCoreCLI@2
+      #   displayName: Pack
+      #   inputs:
+      #     command: 'pack'
+      #     packagesToPack: '**/*.csproj'
+      #     versioningScheme: 'off'
+      # - task: DotNetCoreCLI@2
+      #   displayName: Push
+      #   inputs:
+      #     command: 'push'
+      #     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+      #     nuGetFeedType: 'internal'
+      #     publishVstsFeed: '91283621-b431-4911-9808-ad6d469d1517/ee3b3c1e-4194-4d08-8f25-0a422e86d573'
